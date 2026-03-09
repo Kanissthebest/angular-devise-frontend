@@ -1,0 +1,86 @@
+<div class="container mt-5">
+  <!-- Titre avec icône -->
+  <h2 class="text-center mb-4">
+    <i class="fas fa-exchange-alt"></i> Convertisseur de Devises
+  </h2>
+
+  <!-- Formulaire de conversion -->
+  <form>
+    <div class="row">
+      <!-- Devise de base -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="base">
+            <i class="fas fa-flag"></i> Devise de base
+          </label>
+          <select class="form-control" id="base" [(ngModel)]="base" name="base">
+            <option value="GNF">GNF</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Devise cible -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="cible">
+            <i class="fas fa-flag-checkered"></i> Devise cible
+          </label>
+          <select class="form-control" id="cible" [(ngModel)]="cible" name="cible">
+            <option value="GNF">GNF</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Montant -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="montant">
+            <i class="fas fa-money-bill-wave"></i> Montant
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            id="montant"
+            [(ngModel)]="montant"
+            name="montant"
+            placeholder="Entrez un montant"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Boutons de conversion -->
+    <div class="text-center mt-4">
+      <button
+        type="button"
+        class="btn btn-warning btn-lg mx-4"
+        (click)="effectuerConversion()"
+      >
+        <i class="fas fa-sync-alt"></i> Convertir
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg"
+        (click)="annulerConversion()"
+      >
+        <i class="fas fa-times"></i> Annuler
+      </button>
+    </div>
+  </form>
+
+  <!-- Résultat de la conversion -->
+  <div *ngIf="resultat" class="mt-5 bg-light p-4 rounded shadow">
+    <h4 class="text-center">
+      <i class="fas fa-check-circle text-success"></i> Résultat :
+    </h4>
+    <p class="text-center display-4">
+      {{ montant }} {{ base }} = {{ resultat }} {{ cible }}
+    </p>
+  </div>
+</div>

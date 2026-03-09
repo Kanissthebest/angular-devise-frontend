@@ -1,0 +1,37 @@
+.navbar {
+    padding: 15px 20px;
+    background-color: #ffc107 !important; // Couleur jaune (Bootstrap bg-warning)
+    border-bottom: 3px solid #ff9800; // Ligne de séparation en bas
+  
+    .navbar-brand {
+      font-weight: bold;
+      color: #333333; // Couleur du texte (noir foncé)
+      i {
+        margin-right: 10px; // Espace entre l'icône et le texte
+      }
+    }
+  
+    .nav-link {
+      color: #333333; // Couleur du texte des liens (noir foncé)
+      font-weight: 500;
+      transition: color 0.3s ease, background-color 0.3s ease; // Transition fluide
+  
+      &:hover {
+        color: #ffffff; // Couleur du texte au survol (blanc)
+        background-color: #ff9800; // Couleur de fond au survol (orange)
+        border-radius: 5px; // Coins arrondis au survol
+      }
+  
+      i {
+        margin-right: 8px; // Espace entre l'icône et le texte
+      }
+    }
+  
+    .navbar-toggler {
+      border-color: #333333; // Couleur de la bordure du bouton de bascule
+    }
+  
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); // Couleur du bouton de bascule
+    }
+  }

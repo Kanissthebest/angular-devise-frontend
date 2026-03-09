@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <h2>Historique des Conversions</h2>
+
+  <!-- Tableau pour afficher les conversions -->
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>N°</th>
+          <th>Devise de base</th>
+          <th>Devise cible</th>
+          <th>Montant de base</th>
+          <th>Montant converti</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let conversion of conversions; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ conversion.base }}</td>
+          <td>{{ conversion.cible }}</td>
+          <td>{{ conversion.montantBase }}</td>
+          <td>{{ conversion.montantConverti }}</td>
+          <td>{{ conversion.date | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>
+            <!-- Bouton pour supprimer une conversion -->
+            <button class="btn btn-danger btn-sm" (click)="supprimerConversion(conversion.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Message si aucune conversion n'est trouvée -->
+  <div *ngIf="conversions.length === 0" class="alert alert-info">
+    Aucune conversion trouvée.
+  </div>
+</div>
